@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - hr_test@vdb2.dataart.net" uuid="49190a22-2ce4-4a67-a30e-31f44260512c">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="MySQL - hr_test@localhost" uuid="431593bb-bbcf-4cc1-bcb7-d3ac80ae7a3b">
+    <database-info product="MySQL" version="5.6.25" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="hr_test"/>
+    <table name="T_USER" schema="" catalog="hr_test" type="TABLE">
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="USER_NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="USER_ID"/>
+      <exported-key name="FK57D25EBD266ABCD5" table="T_USER_ACTIVITY_LOG" schema="" catalog="hr_test" columns="USER_ID"/>
+    </table>
+    <table name="T_USER_ACTIVITY_LOG" schema="" catalog="hr_test" type="TABLE">
+      <column name="ACTIVITY_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="ACTIVITY_COUNT" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ACTIVITY_DATE"/>
+      <foreign-key name="FK57D25EBD266ABCD5" columns="USER_ID" ref-table="T_USER" ref-schema="" ref-catalog="hr_test" ref-columns="USER_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK57D25EBD266ABCD5" unique="false" columns="USER_ID"/>
+    </table>
+  </data-source>
+</component>

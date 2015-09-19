@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - hr_test@vdb2.dataart.net" uuid="49190a22-2ce4-4a67-a30e-31f44260512c">
+      <secret-storage>memory</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>hr_test</user-name>
+    </data-source>
+    <data-source name="MySQL - hr_test@localhost" uuid="431593bb-bbcf-4cc1-bcb7-d3ac80ae7a3b">
+      <secret-storage>memory</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>hr_test.*</schema-pattern>
+      <default-schemas>hr_test.*</default-schemas>
+    </data-source>
+  </component>
+</project>
