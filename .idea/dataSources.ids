@@ -17,10 +17,10 @@
       <exported-key name="FK57D25EBD266ABCD5" table="T_USER_ACTIVITY_LOG" schema="" catalog="hr_test" columns="USER_ID"/>
     </table>
     <table name="T_USER_ACTIVITY_LOG" schema="" catalog="hr_test" type="TABLE">
+      <column name="ACTIVITY_COUNT" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="ACTIVITY_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="ACTIVITY_COUNT" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ACTIVITY_DATE"/>
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="ACTIVITY_COUNT,ACTIVITY_DATE,USER_ID"/>
       <foreign-key name="FK57D25EBD266ABCD5" columns="USER_ID" ref-table="T_USER" ref-schema="" ref-catalog="hr_test" ref-columns="USER_ID" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="FK57D25EBD266ABCD5" unique="false" columns="USER_ID"/>
     </table>
