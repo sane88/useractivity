@@ -70,4 +70,8 @@ public class UserActivityServiceImpl implements UserActivityService {
         return result;
     }
 
+    public void setUserActivityDao(UserActivityDao userActivityDao){
+        this.userActivityDao = userActivityDao;
+    }
+
 }
