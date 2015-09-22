@@ -29,7 +29,7 @@ public class UserActivityServiceTest {
         user.setUserId(1);
         user.setUsername("user1");
         UserActivity userActivity1 = new UserActivity();
-        userActivity1.setActivityDate(getDate(2014, 9, 1, 14));
+        userActivity1.setActivityDate(getDate(2014, 9, 1, 5));
         userActivity1.setActivityCount(1);
         userActivity1.setUser(user);
         UserActivity userActivity2 = new UserActivity();
@@ -37,7 +37,7 @@ public class UserActivityServiceTest {
         userActivity2.setActivityCount(3);
         userActivity2.setUser(user);
         UserActivity userActivity3 = new UserActivity();
-        userActivity3.setActivityDate(getDate(2014, 9, 5, 17));
+        userActivity3.setActivityDate(getDate(2014, 9, 5, 8));
         userActivity3.setActivityCount(2);
         userActivity3.setUser(user);
         Mockito.when(userActivityDao.getForPeriodAndForUsers(Mockito.any(Date.class), Mockito.any(Date.class), Mockito.anyCollection())).thenReturn(Arrays.asList(userActivity1, userActivity2, userActivity3));
