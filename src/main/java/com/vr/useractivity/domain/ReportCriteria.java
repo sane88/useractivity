@@ -2,13 +2,12 @@ package com.vr.useractivity.domain;
 
 import java.util.List;
 
-/**
- * Created by valentyn on 20/09/15.
- */
-public class Request {
+
+public class ReportCriteria {
     private String from;
     private String to;
-    private List<String> users;
+    private List<Integer> users;
+    private Integer interval;
 
     public String getFrom() {
         return from;
@@ -26,20 +25,29 @@ public class Request {
         this.to = to;
     }
 
-    public List<String> getUsers() {
+    public List<Integer> getUsers() {
         return users;
     }
 
-    public void setUsers(List<String> users) {
+    public void setUsers(List<Integer> users) {
         this.users = users;
+    }
+
+    public Integer getInterval() {
+        return interval;
+    }
+
+    public void setInterval(Integer interval) {
+        this.interval = interval;
     }
 
     @Override
     public String toString() {
-        return "Request{" +
+        return "ReportCriteria{" +
                 "from='" + from + '\'' +
                 ", to='" + to + '\'' +
                 ", users=" + users +
+                ", interval=" + interval +
                 '}';
     }
 }

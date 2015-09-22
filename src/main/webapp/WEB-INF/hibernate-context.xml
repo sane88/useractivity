@@ -28,7 +28,7 @@
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="com.vr.useractivity.domain"/>
+        <property name="packagesToScan" value="com.vr.useractivity.entity"/>
         <property name="configLocation" value="WEB-INF/hibernate.cfg.xml"/>
     </bean>
 

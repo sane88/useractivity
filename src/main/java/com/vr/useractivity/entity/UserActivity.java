@@ -1,4 +1,4 @@
-package com.vr.useractivity.domain;
+package com.vr.useractivity.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -7,42 +7,6 @@ import java.util.Date;
 @Entity
 @Table(name = "T_USER_ACTIVITY_LOG")
 public class UserActivity {
-
-//    private User user;
-//
-//    private Date activityDate;
-//
-//    private Integer activityCount;
-//
-//
-//    @ManyToOne
-//    @JoinColumn(name = "USER_ID")
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
-//
-//    @Id
-//    @Column(name = "ACTIVITY_DATE")
-//    public Date getActivityDate() {
-//        return activityDate;
-//    }
-//
-//    public void setActivityDate(Date activityDate) {
-//        this.activityDate = activityDate;
-//    }
-//
-//    @Column(name = "ACTIVITY_COUNT")
-//    public Integer getActivityCount() {
-//        return activityCount;
-//    }
-//
-//    public void setActivityCount(Integer activityCount) {
-//        this.activityCount = activityCount;
-//    }
    @EmbeddedId
     private UserRecordPK id = new UserRecordPK();
 

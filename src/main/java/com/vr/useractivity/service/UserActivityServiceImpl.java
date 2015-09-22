@@ -3,8 +3,8 @@ package com.vr.useractivity.service;
 import com.vr.useractivity.dao.UserActivityDao;
 import com.vr.useractivity.dao.UserDao;
 import com.vr.useractivity.domain.Interval;
-import com.vr.useractivity.domain.User;
-import com.vr.useractivity.domain.UserActivity;
+import com.vr.useractivity.entity.User;
+import com.vr.useractivity.entity.UserActivity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,14 +30,13 @@ public class UserActivityServiceImpl implements UserActivityService {
     }
 
     @Transactional
-    public Collection<UserActivity> getActivities(){
-        return userActivityDao.getAll();
-    }
-
-    @Transactional
     public Map<String, Map<String, Integer>> getUsersActivityForPeriod(Date from, Date to, Interval interval, List<Integer> userIds) {
 
         Collection<UserActivity> userActivities = userActivityDao.getForPeriodAndForUsers(from, to, userIds);
+        return transform(userActivities, from, interval);
+    }
+
+    private Map<String, Map<String, Integer>> transform(Collection<UserActivity> userActivities, Date from, Interval interval){
         Date intervalStartDate = truncateDate(from, interval);
         String startDateAsString = asString(intervalStartDate, interval);
         Date intervalEndDate = incrementDate(intervalStartDate, interval);
@@ -50,21 +49,21 @@ public class UserActivityServiceImpl implements UserActivityService {
                 intervalEndDate = incrementDate(intervalStartDate, interval);
             }
 
-                Map<String, Integer> usersActivitiesForInterval = result.get(startDateAsString);
-                if(usersActivitiesForInterval == null){
-                    usersActivitiesForInterval = new TreeMap<String, Integer>();
-                    result.put(startDateAsString, usersActivitiesForInterval);
-                }
-                    String username = userActivity.getUser().getUsername();
-                    Integer currentDateCount = userActivity.getActivityCount();
-                    Integer overallCount = usersActivitiesForInterval.get(username);
-                    if(overallCount == null){
-                        overallCount = 0;
-                    }
-                    if(currentDateCount != null){
-                        overallCount += currentDateCount;
-                    }
-                    usersActivitiesForInterval.put(username, overallCount);
+            Map<String, Integer> usersActivitiesForInterval = result.get(startDateAsString);
+            if(usersActivitiesForInterval == null){
+                usersActivitiesForInterval = new TreeMap<String, Integer>();
+                result.put(startDateAsString, usersActivitiesForInterval);
+            }
+            String username = userActivity.getUser().getUsername();
+            Integer currentDateCount = userActivity.getActivityCount();
+            Integer overallCount = usersActivitiesForInterval.get(username);
+            if(overallCount == null){
+                overallCount = 0;
+            }
+            if(currentDateCount != null){
+                overallCount += currentDateCount;
+            }
+            usersActivitiesForInterval.put(username, overallCount);
 
         }
 

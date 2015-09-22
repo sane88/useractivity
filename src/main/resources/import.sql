@@ -1,3 +1,4 @@
+delete from T_USER_ACTIVITY_LOG;
 delete from T_USER;
 insert INTO T_USER (USER_ID, USER_NAME) VALUES (1, "user1");
 insert INTO T_USER (USER_ID, USER_NAME) VALUES (2, "user2");

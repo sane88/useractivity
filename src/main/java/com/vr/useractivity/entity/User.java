@@ -1,4 +1,4 @@
-package com.vr.useractivity.domain;
+package com.vr.useractivity.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;

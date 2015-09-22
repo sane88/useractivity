@@ -1,7 +1,7 @@
 package com.vr.useractivity.dao;
 
 
-import com.vr.useractivity.domain.UserActivity;
+import com.vr.useractivity.entity.UserActivity;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
@@ -18,10 +18,6 @@ public class UserActivityDaoImpl implements UserActivityDao{
     @Autowired
     private SessionFactory sessionFactory;
 
-
-    public Collection<UserActivity> getAll() {
-        return sessionFactory.getCurrentSession().createCriteria(UserActivity.class).list();
-    }
 
     public Collection<UserActivity> getForPeriodAndForUsers(Date from, Date to, Collection<Integer> userIds) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(UserActivity.class);
