@@ -17,12 +17,12 @@
         <div class="row">
             <div class="form-group col-md-3">
                 <label>From:</label>
-                <from:input path="from" cssClass="form-control" placeholder="dd/MM/yyyy"/>
+                <from:input path="from" cssClass="form-control" placeholder="dd/MM/yyyy HH"/>
             </div>
 
             <div class="form-group col-md-3">
                 <label>To:</label>
-                <from:input path="to" cssClass="form-control" placeholder="dd/MM/yyyy"/>
+                <from:input path="to" cssClass="form-control" placeholder="dd/MM/yyyy HH"/>
             </div>
             <div class="form-group col-md-2">
                 <label>Interval:</label>

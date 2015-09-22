@@ -21,7 +21,7 @@ import java.util.*;
 @Controller
 public class MainController {
 
-    private static final String pattern = "dd/MM/yyyy";
+    private static final String pattern = "dd/MM/yyyy HH";
     private static Logger logger = Logger.getLogger(MainController.class);
 
     private Map<Integer, String> allUsersMap = new LinkedHashMap<Integer, String>();
@@ -31,7 +31,6 @@ public class MainController {
 
     @RequestMapping(value = "/")
     public String getViewActivities(@ModelAttribute("reportcriteria") ReportCriteria reportCriteria, Model model) throws ParseException{
-
         model.addAttribute("allUsers", loadUsers());
         model.addAttribute("intervals", Interval.asMap());
         if (!isRequestFilled(reportCriteria)) {

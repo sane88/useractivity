@@ -9,7 +9,7 @@ public enum Interval {
     MONTH("MM/yyyy",Calendar.MONTH),
     WEEK("dd/MM/yyyy",Calendar.WEEK_OF_MONTH),
     DAY("dd/MM/yyyy",Calendar.DAY_OF_MONTH),
-    HOUR("dd/MM/yyyy HH",Calendar.HOUR);
+    HOUR("dd/MM/yyyy HH:mm",Calendar.HOUR);
 
     private String pattern;
 
