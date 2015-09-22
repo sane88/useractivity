@@ -13,7 +13,7 @@
 <body>
 <div class="container">
     <h3>User Activity Log</h3>
-    <form:form method="post" action="/" modelAttribute="reportcriteria">
+    <form:form method="post" action="" modelAttribute="reportcriteria">
         <div class="row">
             <div class="form-group col-md-3">
                 <label>From:</label>
